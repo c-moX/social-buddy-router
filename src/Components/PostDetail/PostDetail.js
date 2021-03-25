@@ -13,7 +13,7 @@ const PostDetail = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setPost(data))
-    }, [])
+    }, [postId])
 
     const [comments, setComments] = useState([]);
     useEffect( () => {
@@ -21,7 +21,7 @@ const PostDetail = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setComments(data))
-    }, [])
+    }, [postId])
 
     return (
         <div className="post-detail-container">
